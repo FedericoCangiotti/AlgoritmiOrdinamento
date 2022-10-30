@@ -42,5 +42,28 @@ namespace AlgoritmiOrdinamento
                 }
             }
         }
+
+        public void BubbleSort()
+        {
+            bool scambio = true;
+            int fine = vettore.Length - 1;
+
+            while (scambio == true)
+            {
+                scambio = false;
+                for (int i = 0; i < fine; i++)
+                {
+                    if (vettore[i] > vettore[i + 1])
+                    {
+                        int temp = vettore[i];
+                        vettore[i] = vettore[i + 1];
+                        vettore[i + 1] = temp;
+
+                        scambio = true;
+                    }
+                }
+                fine--;
+            }
+        }
     }
 }
