@@ -4,6 +4,7 @@
     {
         static void Main(string[] args)
         {
+            GestioneAlgoritmi algoritmi = new GestioneAlgoritmi(10, 1, 10);
         }
     }
 }
