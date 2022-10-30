@@ -20,5 +20,27 @@ namespace AlgoritmiOrdinamento
                 vettore[i] = rand.Next(numeroMinimo, numeroMassimo + 1);
             }
         }
+
+        public void SelectionSort()
+        {
+            int posizioneMinore;
+            for (int i = 0; i < vettore.Length - 1; i++)
+            {
+                posizioneMinore = i;
+                for (int j = i + 1; j < vettore.Length; j++)
+                {
+                    if (vettore[posizioneMinore] > vettore[j])
+                    {
+                        posizioneMinore = j;
+                    }
+                }
+                if (posizioneMinore != i)
+                {
+                    int temp = vettore[i];
+                    vettore[i] = vettore[posizioneMinore];
+                    vettore[posizioneMinore] = temp;
+                }
+            }
+        }
     }
 }
