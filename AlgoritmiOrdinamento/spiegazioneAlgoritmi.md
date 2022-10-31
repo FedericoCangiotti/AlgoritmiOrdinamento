@@ -9,7 +9,7 @@ L'algoritmo termina quando l'array risulterà ordinato ovvero, quando la sequenz
 1. Trovare l’elemento minore all'interno della sequenza disordinata.
 2. Scambiare l'elemento minore trovato con l'ultimo elemento della sequenza ordinata (solo se è stato effettivamente trovato un elemento minore).
 3. Aggiornare la lunghezza delle due sequenze (incrementare di uno la sequenza ordinata e decrementare di uno la sequenza disordinata).
-4. Ripetere il passaggio 1,2 finché non rimane un solo elemento nella sequenza disordinata.
+4. Ripetere i passaggi 1,2 finché non rimane un solo elemento nella sequenza disordinata.
    <br>
    <br>
 
