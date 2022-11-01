@@ -2,12 +2,12 @@
 
 namespace AlgoritmiOrdinamento
 {
-    internal class GestioneAlgoritmi
+    internal class GestoreAlgoritmi
     {
         int[] vettore;
         string tempoEsecuzione;
 
-        public GestioneAlgoritmi(int lunghezzaArray, int numeroMinimo, int numeroMassimo)
+        public GestoreAlgoritmi(int lunghezzaArray, int numeroMinimo, int numeroMassimo)
         {
             vettore = new int[lunghezzaArray];
             Random rand = new Random();

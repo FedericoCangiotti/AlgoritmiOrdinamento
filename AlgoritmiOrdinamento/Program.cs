@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            GestioneAlgoritmi algoritmi;
+            GestoreAlgoritmi algoritmi;
             int lunghezza, nMin, nMax, sceltaAlgoritmo;
             bool continuaProgramma = true;
 
@@ -14,7 +14,7 @@
                 Console.WriteLine("\nInserisci la lunghezza dell'array, il numero minimo e massimo generato, tutti separati tra loro da una virgola: ");
                 string caratteristicheVettore = Console.ReadLine();
                 DividiCaratteristicheArray(caratteristicheVettore, ref lunghezza, ref nMin, ref nMax);
-                algoritmi = new GestioneAlgoritmi(lunghezza, nMin, nMax);
+                algoritmi = new GestoreAlgoritmi(lunghezza, nMin, nMax);
 
                 Console.WriteLine("\n[1] -> Selection sort\n[2] -> Bubble sort\n[3] -> Insertion sort\n[9] -> Esci dal programma");
                 Console.WriteLine("Scegli inserendo il numero corrispondente: ");
