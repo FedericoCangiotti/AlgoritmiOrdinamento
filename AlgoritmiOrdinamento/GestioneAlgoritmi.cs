@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace AlgoritmiOrdinamento
     internal class GestioneAlgoritmi
     {
         int[] vettore;
+        string tempoEsecuzione;
 
         public GestioneAlgoritmi(int lunghezzaArray, int numeroMinimo, int numeroMassimo)
         {
@@ -21,8 +23,22 @@ namespace AlgoritmiOrdinamento
             }
         }
 
+        void CalcolaTempoEsecuzione(Stopwatch stopwatch)
+        {
+            TimeSpan ts = stopwatch.Elapsed;
+            tempoEsecuzione = $"Tempo di esecuzione - {ts.Hours}:{ts.Minutes}:{ts.Seconds}.{ts.Milliseconds}";
+        }
+
+        public string TempoEsecuzione
+        {
+            get { return tempoEsecuzione; }
+        }
+
         public void SelectionSort()
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             int posizioneMinore;
             for (int i = 0; i < vettore.Length - 1; i++)
             {
@@ -41,10 +57,16 @@ namespace AlgoritmiOrdinamento
                     vettore[posizioneMinore] = temp;
                 }
             }
+
+            stopwatch.Stop();
+            CalcolaTempoEsecuzione(stopwatch);
         }
 
         public void BubbleSort()
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             bool scambio = true;
             int fine = vettore.Length - 1;
 
@@ -64,10 +86,16 @@ namespace AlgoritmiOrdinamento
                 }
                 fine--;
             }
+
+            stopwatch.Stop();
+            CalcolaTempoEsecuzione(stopwatch);
         }
 
         public void InsertionSort()
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             for (int i = 1; i < vettore.Length; i++)
             {
                 int inserimento = vettore[i];
@@ -81,6 +109,9 @@ namespace AlgoritmiOrdinamento
 
                 vettore[indice + 1] = inserimento;
             }
+
+            stopwatch.Stop();
+            CalcolaTempoEsecuzione(stopwatch);
         }
     }
 }

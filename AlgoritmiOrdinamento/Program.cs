@@ -38,6 +38,7 @@
                         Console.WriteLine("Scelta invalida");
                         break;
                 }
+                Console.WriteLine(algoritmi.TempoEsecuzione);
             } while (continuaProgramma);
         }
 
