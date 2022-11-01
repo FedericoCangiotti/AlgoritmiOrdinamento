@@ -65,5 +65,22 @@ namespace AlgoritmiOrdinamento
                 fine--;
             }
         }
+
+        public void InsertionSort()
+        {
+            for (int i = 1; i < vettore.Length; i++)
+            {
+                int inserimento = vettore[i];
+                int indice = i - 1;
+
+                while (indice >= 0 && vettore[indice] > inserimento)
+                {
+                    vettore[indice + 1] = vettore[indice];
+                    indice--;
+                }
+
+                vettore[indice + 1] = inserimento;
+            }
+        }
     }
 }
