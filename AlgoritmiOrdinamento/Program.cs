@@ -6,21 +6,20 @@
 
         static void Main(string[] args)
         {
-            bool continuaProgramma = true;
             string messaggioCreazioneArray =
                 "[1] -> lunghezza 10 000\t\tintervallo valori[1 - 100]\n" +
                 "[2] -> lunghezza 50 000\t\tintervallo valori[1 - 100]\n" +
                 "[3] -> lunghezza 100 000\tintervallo valori[1 - 100]\n" +
                 "[4] -> lunghezza 1 000 000\tintervallo valori[1 - 1000]\n" +
                 "[9] -> Personalizza dati\n" +
-                "Seleziona un template oppure premi 9 per personalizzare la creazione dell'array: ";
+                "[0] -> Esci dal programma\n" +
+                "Seleziona un template oppure personalizzalo per creare l'array: ";
 
             string messaggioSelezioneAlgoritmo =
                 "\n[1] -> Selection sort\n" +
                 "[2] -> Bubble sort\n" +
                 "[3] -> Insertion sort\n" +
-                "[9] -> Esci dal programma\n" +
-                "Scegli inserendo il numero corrispondente: ";
+                "Scegli l'algoritmo di ordinamento: ";
 
             do
             {
@@ -29,6 +28,11 @@
 
                 Console.WriteLine(messaggioCreazioneArray);
                 int sceltaCreazioneArray = Convert.ToInt32(Console.ReadLine());
+                if (sceltaCreazioneArray == 0)
+                {
+                    Console.WriteLine("\nProgramma terminato");
+                    break;
+                }
                 switch (sceltaCreazioneArray)
                 {
                     case 1:
@@ -75,23 +79,14 @@
                         MessaggioInizioOrdinamento();
                         algoritmi.InsertionSort();
                         break;
-                    case 9:
-                        Console.WriteLine("\nProgramma terminato");
-                        continuaProgramma = false;
-                        break;
                     default:
                         Console.WriteLine("Scelta invalida");
                         break;
                 }
-
-                if (continuaProgramma == true)
-                {
-                    MessaggioFineOrdinamento();
-
-                    Console.WriteLine(algoritmi.TempoEsecuzione);
-                    Console.WriteLine("\n------------------------------------------------------------------------------------------\n");
-                }
-            } while (continuaProgramma);
+                MessaggioFineOrdinamento();
+                Console.WriteLine(algoritmi.TempoEsecuzione);
+                Console.WriteLine("\n------------------------------------------------------------------------------------------\n");
+            } while (true);
         }
 
         static void DividiCaratteristicheArray(string input, ref int length, ref int min, ref int max)
