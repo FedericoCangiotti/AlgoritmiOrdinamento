@@ -7,16 +7,29 @@
         static void Main(string[] args)
         {
             bool continuaProgramma = true;
+            string messaggioCreazioneArray =
+                "[1] -> lunghezza 10 000\t\tintervallo valori[1 - 100]\n" +
+                "[2] -> lunghezza 50 000\t\tintervallo valori[1 - 100]\n" +
+                "[3] -> lunghezza 100 000\tintervallo valori[1 - 100]\n" +
+                "[4] -> lunghezza 1 000 000\tintervallo valori[1 - 1000]\n" +
+                "[9] -> Personalizza dati\n" +
+                "Seleziona un template oppure premi 9 per personalizzare la creazione dell'array: ";
+
+            string messaggioSelezioneAlgoritmo =
+                "\n[1] -> Selection sort\n" +
+                "[2] -> Bubble sort\n" +
+                "[3] -> Insertion sort\n" +
+                "[9] -> Esci dal programma\n" +
+                "Scegli inserendo il numero corrispondente: ";
 
             do
             {
                 int lunghezza, nMin, nMax, sceltaAlgoritmo;
                 lunghezza = nMin = nMax = 0;
 
-                Console.WriteLine("[1] -> lunghezza 10 000\t\tintervallo valori [1-100]\n[2] -> lunghezza 50 000\t\tintervallo valori [1-100]\n[3] -> lunghezza 100 000\tintervallo valori [1-100]\n[4] -> lunghezza 1 000 000\tintervallo valori [1-1000]\n[9] -> Personalizza dati");
-                Console.WriteLine("Seleziona un template oppure premi 9 per personalizzare la creazione dell'array: ");
-                int sceltaCaratteristicheArray = Convert.ToInt32(Console.ReadLine());
-                switch (sceltaCaratteristicheArray)
+                Console.WriteLine(messaggioCreazioneArray);
+                int sceltaCreazioneArray = Convert.ToInt32(Console.ReadLine());
+                switch (sceltaCreazioneArray)
                 {
                     case 1:
                         lunghezza = 10000;
@@ -46,8 +59,7 @@
                 }
                 algoritmi = new GestoreAlgoritmi(lunghezza, nMin, nMax);
 
-                Console.WriteLine("\n[1] -> Selection sort\n[2] -> Bubble sort\n[3] -> Insertion sort\n[9] -> Esci dal programma");
-                Console.WriteLine("Scegli inserendo il numero corrispondente: ");
+                Console.WriteLine(messaggioSelezioneAlgoritmo);
                 sceltaAlgoritmo = Convert.ToInt32(Console.ReadLine());
                 switch (sceltaAlgoritmo)
                 {
@@ -77,9 +89,7 @@
                     MessaggioFineOrdinamento();
 
                     Console.WriteLine(algoritmi.TempoEsecuzione);
-                    Console.WriteLine();
-                    Console.WriteLine("------------------------------------------------------------------------------------------");
-                    Console.WriteLine();
+                    Console.WriteLine("\n------------------------------------------------------------------------------------------\n");
                 }
             } while (continuaProgramma);
         }
