@@ -11,7 +11,7 @@
             do
             {
                 lunghezza = nMin = nMax = 0;
-                Console.WriteLine("\nInserisci la lunghezza dell'array, il numero minimo e massimo generato, tutti separati tra loro da una virgola: ");
+                Console.WriteLine("Inserisci la lunghezza dell'array, il numero minimo e massimo generato, tutti separati tra loro da una virgola: ");
                 string caratteristicheVettore = Console.ReadLine();
                 DividiCaratteristicheArray(caratteristicheVettore, ref lunghezza, ref nMin, ref nMax);
                 algoritmi = new GestoreAlgoritmi(lunghezza, nMin, nMax);
@@ -39,6 +39,7 @@
                         break;
                 }
                 Console.WriteLine(algoritmi.TempoEsecuzione);
+                Console.WriteLine();
             } while (continuaProgramma);
         }
 
