@@ -2,18 +2,43 @@
 {
     internal class Program
     {
+        static GestoreAlgoritmi algoritmi;
+
         static void Main(string[] args)
         {
-            GestoreAlgoritmi algoritmi;
-            int lunghezza, nMin, nMax, sceltaAlgoritmo;
             bool continuaProgramma = true;
 
             do
             {
+                int lunghezza, nMin, nMax, sceltaAlgoritmo;
                 lunghezza = nMin = nMax = 0;
-                Console.WriteLine("Inserisci la lunghezza dell'array, il numero minimo e massimo generato, tutti separati tra loro da una virgola: ");
-                string caratteristicheVettore = Console.ReadLine();
-                DividiCaratteristicheArray(caratteristicheVettore, ref lunghezza, ref nMin, ref nMax);
+
+                Console.WriteLine("[1] -> lunghezza 1000\t\tintervallo valori [1-100]\n[2] -> lunghezza 100 000\tintervallo valori [1-100]\n[3] -> lunghezza 1 000 000\tintervallo valori [1-1000]\n[9] -> Personalizza dati");
+                Console.WriteLine("Seleziona un template oppure premi 9 per personalizzare la creazione dell'array: ");
+                int sceltaCaratteristicheArray = Convert.ToInt32(Console.ReadLine());
+                switch (sceltaCaratteristicheArray)
+                {
+                    case 1:
+                        lunghezza = 10000;
+                        nMin = 1;
+                        nMax = 100;
+                        break;
+                    case 2:
+                        lunghezza = 100000;
+                        nMin = 1;
+                        nMax = 100;
+                        break;
+                    case 3:
+                        lunghezza = 1000000;
+                        nMin = 1;
+                        nMax = 1000;
+                        break;
+                    case 9:
+                        Console.WriteLine("\nInserisci la lunghezza dell'array, il numero minimo e massimo generato, tutti separati tra loro da una virgola: ");
+                        string caratteristicheVettore = Console.ReadLine();
+                        DividiCaratteristicheArray(caratteristicheVettore, ref lunghezza, ref nMin, ref nMax);
+                        break;
+                }
                 algoritmi = new GestoreAlgoritmi(lunghezza, nMin, nMax);
 
                 Console.WriteLine("\n[1] -> Selection sort\n[2] -> Bubble sort\n[3] -> Insertion sort\n[9] -> Esci dal programma");
@@ -47,6 +72,8 @@
                     MessaggioFineOrdinamento();
 
                     Console.WriteLine(algoritmi.TempoEsecuzione);
+                    Console.WriteLine();
+                    Console.WriteLine("------------------------------------------------------------------------------------------");
                     Console.WriteLine();
                 }
             } while (continuaProgramma);
