@@ -19,20 +19,18 @@
                 Console.WriteLine("\n[1] -> Selection sort\n[2] -> Bubble sort\n[3] -> Insertion sort\n[9] -> Esci dal programma");
                 Console.WriteLine("Scegli inserendo il numero corrispondente: ");
                 sceltaAlgoritmo = Convert.ToInt32(Console.ReadLine());
-
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.CursorVisible = false;
-                Console.WriteLine("Ordinamento in corso, attendere...");
-                
                 switch (sceltaAlgoritmo)
                 {
                     case 1:
+                        MessaggioInizioOrdinamento();
                         algoritmi.SelectionSort();
                         break;
                     case 2:
+                        MessaggioInizioOrdinamento();
                         algoritmi.BubbleSort();
                         break;
                     case 3:
+                        MessaggioInizioOrdinamento();
                         algoritmi.InsertionSort();
                         break;
                     case 9:
@@ -44,13 +42,13 @@
                         break;
                 }
 
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.CursorVisible = true;
-                Console.WriteLine("\nOrdinamento completato");
-                Console.ForegroundColor = ConsoleColor.White;
+                if (continuaProgramma == true)
+                {
+                    MessaggioFineOrdinamento();
 
-                Console.WriteLine(algoritmi.TempoEsecuzione);
-                Console.WriteLine();
+                    Console.WriteLine(algoritmi.TempoEsecuzione);
+                    Console.WriteLine();
+                }
             } while (continuaProgramma);
         }
 
@@ -60,6 +58,21 @@
             length = Convert.ToInt32(ris[0]);
             min = Convert.ToInt32(ris[1]);
             max = Convert.ToInt32(ris[2]);
+        }
+
+        static void MessaggioInizioOrdinamento()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.CursorVisible = false;
+            Console.WriteLine("Ordinamento in corso, attendere...");
+        }
+
+        static void MessaggioFineOrdinamento()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.CursorVisible = true;
+            Console.WriteLine("\nOrdinamento completato");
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }
