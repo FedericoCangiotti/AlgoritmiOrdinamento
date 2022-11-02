@@ -19,6 +19,11 @@
                 Console.WriteLine("\n[1] -> Selection sort\n[2] -> Bubble sort\n[3] -> Insertion sort\n[9] -> Esci dal programma");
                 Console.WriteLine("Scegli inserendo il numero corrispondente: ");
                 sceltaAlgoritmo = Convert.ToInt32(Console.ReadLine());
+
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.CursorVisible = false;
+                Console.WriteLine("Ordinamento in corso, attendere...");
+                
                 switch (sceltaAlgoritmo)
                 {
                     case 1:
@@ -38,6 +43,12 @@
                         Console.WriteLine("Scelta invalida");
                         break;
                 }
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.CursorVisible = true;
+                Console.WriteLine("\nOrdinamento completato");
+                Console.ForegroundColor = ConsoleColor.White;
+
                 Console.WriteLine(algoritmi.TempoEsecuzione);
                 Console.WriteLine();
             } while (continuaProgramma);
