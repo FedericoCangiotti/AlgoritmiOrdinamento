@@ -60,6 +60,9 @@
                         string caratteristicheVettore = Console.ReadLine();
                         DividiCaratteristicheArray(caratteristicheVettore, ref lunghezza, ref nMin, ref nMax);
                         break;
+                    default:
+                        Console.WriteLine("Scelta invalida, riavviare il programma");
+                        break;
                 }
                 algoritmi = new GestoreAlgoritmi(lunghezza, nMin, nMax);
 
@@ -80,7 +83,7 @@
                         algoritmi.InsertionSort();
                         break;
                     default:
-                        Console.WriteLine("Scelta invalida");
+                        Console.WriteLine("Scelta invalida, riavviare il programma");
                         break;
                 }
                 MessaggioFineOrdinamento();
