@@ -108,5 +108,28 @@ namespace AlgoritmiOrdinamento
             stopwatch.Stop();
             CalcolaTempoEsecuzione(stopwatch);
         }
+
+        public void ShellSort()
+        {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
+            for (int gap = vettore.Length / 2; gap > 0; gap /= 2)
+            {
+                for (int i = gap; i < vettore.Length; i++)
+                {
+                    int j;
+                    int temp = vettore[i];
+                    for (j = i; j >= gap && temp < vettore[j - gap]; j -= gap)
+                    {
+                        vettore[j] = vettore[j - gap];
+                    }
+                    vettore[j] = temp;
+                }
+            }
+
+            stopwatch.Stop();
+            CalcolaTempoEsecuzione(stopwatch);
+        }
     }
 }

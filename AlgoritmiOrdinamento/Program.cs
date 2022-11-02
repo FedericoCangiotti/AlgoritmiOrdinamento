@@ -19,6 +19,7 @@
                 "\n[1] -> Selection sort\n" +
                 "[2] -> Bubble sort\n" +
                 "[3] -> Insertion sort\n" +
+                "[4] -> Shell sort\n" +
                 "Scegli l'algoritmo di ordinamento: ";
 
             do
@@ -81,6 +82,10 @@
                     case 3:
                         MessaggioInizioOrdinamento();
                         algoritmi.InsertionSort();
+                        break;
+                    case 4:
+                        MessaggioInizioOrdinamento();
+                        algoritmi.ShellSort();
                         break;
                     default:
                         Console.WriteLine("Scelta invalida, riavviare il programma");
