@@ -13,7 +13,7 @@
                 int lunghezza, nMin, nMax, sceltaAlgoritmo;
                 lunghezza = nMin = nMax = 0;
 
-                Console.WriteLine("[1] -> lunghezza 1000\t\tintervallo valori [1-100]\n[2] -> lunghezza 100 000\tintervallo valori [1-100]\n[3] -> lunghezza 1 000 000\tintervallo valori [1-1000]\n[9] -> Personalizza dati");
+                Console.WriteLine("[1] -> lunghezza 10 000\t\tintervallo valori [1-100]\n[2] -> lunghezza 50 000\t\tintervallo valori [1-100]\n[3] -> lunghezza 100 000\tintervallo valori [1-100]\n[4] -> lunghezza 1 000 000\tintervallo valori [1-1000]\n[9] -> Personalizza dati");
                 Console.WriteLine("Seleziona un template oppure premi 9 per personalizzare la creazione dell'array: ");
                 int sceltaCaratteristicheArray = Convert.ToInt32(Console.ReadLine());
                 switch (sceltaCaratteristicheArray)
@@ -24,11 +24,16 @@
                         nMax = 100;
                         break;
                     case 2:
-                        lunghezza = 100000;
+                        lunghezza = 50000;
                         nMin = 1;
                         nMax = 100;
                         break;
                     case 3:
+                        lunghezza = 100000;
+                        nMin = 1;
+                        nMax = 100;
+                        break;
+                    case 4:
                         lunghezza = 1000000;
                         nMin = 1;
                         nMax = 1000;
